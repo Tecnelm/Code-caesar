@@ -15,7 +15,7 @@ public class MainPanel extends Panel implements ActionListener {
 	private static final long serialVersionUID = 1L;
 
 	private JButton coder = new JButton("coder");
-	private JButton decoder = new JButton("décoder");
+	private JButton decoder = new JButton("dÃ©coder");
 
 	private JTextFieldLimit textField = new JTextFieldLimit(3);
 
@@ -60,7 +60,7 @@ public class MainPanel extends Panel implements ActionListener {
 
 		// parametrage des consigne 
 		JLabel label = new JLabel();
-		label.setText("<html>pour coder : rentrez le décalage puis appuyer sur coder.<br>pour décoder : la lettre la plus fréquente ou le décalage puis cliquer sur décoder ou rien.</html>");
+		label.setText("<html>pour coder : rentrez le dÃ©calage puis appuyer sur coder.<br>pour dÃ©coder : la lettre la plus frÃ©quente ou le dÃ©calage puis cliquer sur dÃ©coder ou rien.</html>");
 		label.setFont(font1);
 		label.setBounds(830, 270, 460, 100);
 		label.setOpaque(false);
@@ -86,18 +86,18 @@ public class MainPanel extends Panel implements ActionListener {
 
 			if (arg0.getSource() == decoder) { // si bouton decoder 
 				n.decode();
-				String[] resultat = n.getresult(); //  recupère le tableau de resultat
+				String[] resultat = n.getresult(); //  recupÃ¨re le tableau de resultat
 
 				if ((resultat.length) == 1) // si il n'y a que un resultat  le met dans zone 2 eme zone  de texte 
 				this.SetTextTrad(resultat[0]); 
 
 				else {
-					// si aucune instruction n'a été donné change de panel (affichage )
+					// si aucune des actions n'a Ã©tÃ© faite change de panel (affichage trop de resultat )
 					PanelManager.getInstance().getJPanel(1).SetTextField(resultat); // definie les text field avec les possibiliter				  
-					Frame.getInstance().setVisible(false); // rend invisible cette fonction  pour permettre le reload
-					Frame.getInstance().remove(this); // la supprime
+					Frame.getInstance().setVisible(false); // rend invisible cet objet   pour permettre le reload
+					Frame.getInstance().remove(this); // le supprime
 					Frame.getInstance().add(PanelManager.getInstance().getJPanel(1)); // change le panel
-					Frame.getInstance().setVisible(true); // rend visible la nouvelle   
+					Frame.getInstance().setVisible(true); // rend visible le nouveau panel  
 					
 					
 				}
@@ -112,11 +112,11 @@ public class MainPanel extends Panel implements ActionListener {
 		textarea2.append(string);// ajoute le nouveau 
 
 	}
-	// recuperer le text du text area1
+	// recuperer le text du text a traduire
 	public String GetTextToTrad() {
 		return textarea1.getText();
 	}
-	// recupérer l'id du panel
+	// recupÃ©rer l'id du panel
 	public int getID() {
 		return id;
 	}
